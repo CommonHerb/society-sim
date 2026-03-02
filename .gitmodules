@@ -1,0 +1,3 @@
+[submodule "HERB"]
+	path = HERB
+	url = https://github.com/CommonHerb/HERB_OS.git

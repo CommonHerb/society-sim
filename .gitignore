@@ -1,0 +1,47 @@
+# Node / TypeScript
+node_modules/
+**/dist/
+**/*.tsbuildinfo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Runtime artifacts
+sim-data/snapshots/
+sim-data/deltas/
+
+# Python caches
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+**/*.pyo
+
+# HERB archive/reference payloads (non-active, large/binary heavy)
+HERB/HERB_ARCHIVE/
+
+# HERB generated build/runtime artifacts
+HERB/boot/*.bin
+HERB/boot/*.img
+HERB/boot/*.pe
+HERB/boot/*.o
+HERB/boot/*.exe
+HERB/boot/*.s
+HERB/boot/*.log
+HERB/boot/serial_*.txt
+HERB/boot/screenshot.png
+
+HERB/src/*.o
+HERB/src/*.exe
+HERB/src/*.log
+
+# Media and compressed artifacts
+*.zip
+*.mp4

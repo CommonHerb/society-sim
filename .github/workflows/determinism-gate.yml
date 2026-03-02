@@ -1,0 +1,21 @@
+name: determinism-gate
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  determinism:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+      - name: Run deterministic replay gate
+        shell: pwsh
+        run: ./scripts/run-determinism-gate.ps1

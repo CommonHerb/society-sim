@@ -1,0 +1,15 @@
+name: herb-only-guard
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  guard:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce HERB-only simulation namespace
+        shell: pwsh
+        run: ./scripts/enforce-herb-only.ps1
