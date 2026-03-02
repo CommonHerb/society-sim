@@ -1,4 +1,4 @@
-name: determinism-gate
+name: purity-global
 
 on:
   pull_request:
@@ -6,12 +6,13 @@ on:
     branches: [ main ]
 
 jobs:
-  determinism:
+  purity-global:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Run deterministic replay gate
+      - name: Enforce global HERB purity
         shell: pwsh
-        run: ./scripts/run-determinism-gate.ps1
+        run: ./scripts/enforce-herb-purity-global.ps1
+

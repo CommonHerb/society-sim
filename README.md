@@ -50,6 +50,11 @@ Run guard locally:
 ./scripts/enforce-herb-only.ps1
 ```
 
+Run global purity gate locally:
+```powershell
+./scripts/enforce-herb-purity-global.ps1
+```
+
 Run determinism gate locally:
 ```powershell
 ./scripts/run-determinism-gate.ps1
