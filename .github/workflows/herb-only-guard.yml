@@ -10,6 +10,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Enforce HERB-only simulation namespace
         shell: pwsh
         run: ./scripts/enforce-herb-only.ps1
