@@ -12,12 +12,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install pytest
-        run: python -m pip install --upgrade pip pytest
       - name: Run deterministic replay gate
         shell: pwsh
         run: ./scripts/run-determinism-gate.ps1
