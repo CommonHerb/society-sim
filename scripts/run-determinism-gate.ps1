@@ -74,7 +74,7 @@ if ($actual.Count -ne $expected.Count) {
   $delta = Compare-Object -ReferenceObject $expected -DifferenceObject $actual -IncludeEqual:$false
   $delta | Select-Object -First 20 | ForEach-Object {
     $side = if ($_.SideIndicator -eq "<=") { "missing" } else { "unexpected" }
-    Write-Host " - $side: $($_.InputObject)"
+    Write-Host " - ${side}: $($_.InputObject)"
   }
   exit 1
 }
@@ -84,7 +84,7 @@ if ($diff) {
   Write-Host "Determinism manifest mismatch detected."
   $diff | Select-Object -First 20 | ForEach-Object {
     $side = if ($_.SideIndicator -eq "<=") { "missing" } else { "unexpected" }
-    Write-Host " - $side: $($_.InputObject)"
+    Write-Host " - ${side}: $($_.InputObject)"
   }
   exit 1
 }
