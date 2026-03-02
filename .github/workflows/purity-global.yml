@@ -1,0 +1,18 @@
+name: purity-global
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  purity-global:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Enforce global HERB purity
+        shell: pwsh
+        run: ./scripts/enforce-herb-purity-global.ps1
+

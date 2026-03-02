@@ -45,3 +45,6 @@ HERB/src/*.log
 # Media and compressed artifacts
 *.zip
 *.mp4
+
+# Local handoff drops (analysis snapshots, not versioned)
+handoff/
