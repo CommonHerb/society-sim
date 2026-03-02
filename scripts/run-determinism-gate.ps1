@@ -1,9 +1,13 @@
 param(
   [Parameter(Mandatory = $false)]
-  [string]$Root = "C:\Users\Ben\Desktop\society-sim"
+  [string]$Root = ""
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+  $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+}
 
 $herbSrc = Join-Path $Root "HERB\src"
 if (-not (Test-Path $herbSrc)) {

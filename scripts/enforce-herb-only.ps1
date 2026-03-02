@@ -1,9 +1,13 @@
 param(
   [Parameter(Mandatory = $false)]
-  [string]$Root = "C:\Users\Ben\Desktop\society-sim"
+  [string]$Root = ""
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+  $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+}
 
 $paths = @(
   (Join-Path $Root "HERB\src\society"),
@@ -55,4 +59,3 @@ if ($violations.Count -gt 0) {
 
 Write-Host "HERB-only enforcement passed."
 exit 0
-
